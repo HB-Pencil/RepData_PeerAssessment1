@@ -66,7 +66,7 @@ meanSteps[which.max(meanSteps$x), ]
 
 ## Imputing missing values
 
-Next, we'll report the total number of missing values in the raw data and replace NAs with mean of interval. Then, make a histogram of the new dataset and report the mean and median just as what we did previously. 
+Next, we'll report the total number of missing values in the raw data and replace NAs with mean of interval. The strategy here is first to add a new column of 5 minute interval mean to the raw dataset by merge() function. Then find the NAs in steps and replace them with the interval mean we just added. Then, make a histogram of the new dataset and report the mean and median just as what we did previously. 
 
 
 ```r

@@ -88,7 +88,7 @@ with(meanSteps, plot(interval, x, type=&quot;l&quot;, xlab=&quot;5 Minute Interv
 </div>
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
-<p>Next, we’ll report the total number of missing values in the raw data and replace NAs with mean of interval. Then, make a histogram of the new dataset and report the mean and median just as what we did previously.</p>
+<p>Next, we’ll report the total number of missing values in the raw data and replace NAs with mean of interval. The strategy here is first to add a new column of 5 minute interval mean to the raw dataset by merge() function. Then find the NAs in steps and replace them with the interval mean we just added. Then, make a histogram of the new dataset and report the mean and median just as what we did previously.</p>
 <pre class="r"><code>nrow(mydata[!complete.cases(mydata), ])</code></pre>
 <pre><code>## [1] 2304</code></pre>
 <pre class="r"><code>mergeMean &lt;- merge(mydata, meanSteps, by=&quot;interval&quot;)
